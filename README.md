@@ -33,4 +33,4 @@ Additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Fandi Yulistian** [fyulistian](https://github.com/fyulistian)
+[**Fandi Yulistian**](https://github.com/fyulistian)
