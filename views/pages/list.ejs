@@ -24,7 +24,7 @@
 										</thead>
 										<tbody>
 											<% data.forEach((eachProduct, index) => { %>
-												<tr>
+												<tr class="pointer" data-url="<%= eachProduct.url %>">
 													<th scope="row"> <%= index + 1 %> </th>
 													<td> <%= eachProduct.name %> </td>
 													<td> <%= eachProduct.price %> </td>

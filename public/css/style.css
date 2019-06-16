@@ -1040,6 +1040,10 @@ textarea[resize='horizontal'] {
 	}
 }
 
+.pointer:hover {
+	cursor: pointer;
+}
+
 /* search */
 #search {
     position: fixed;

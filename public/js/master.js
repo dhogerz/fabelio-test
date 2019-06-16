@@ -1,5 +1,7 @@
 $(function() {
 	starr();
+	goTo();
+	
 	// $('form').submit(function(event) {
 	//     event.preventDefault();
 
@@ -9,9 +11,8 @@ $(function() {
 	// })	
 });
 
-// star
-function starr() {
-	// Starrr plugin (https://github.com/dobtco/starrr)
+// Starrr plugin (https://github.com/dobtco/starrr)
+function starr() {	
 	var __slice = [].slice;
 
 	(function($, window) {
@@ -125,5 +126,21 @@ function starr() {
 	  $('#stars-existing').on('starrr:change', function(e, value){
 	    $('#count-existing').val(value);
 	  });
+	});
+}
+
+// GoTo
+function goTo() {
+	$(document).on('click','.pointer',function (e) {
+
+	    e.stopPropagation();
+	    e.preventDefault();
+
+	    let dest = $(this).data("url"), 
+	    	host = window.location.hostname,
+	    	protocol = window.location.protocol,
+	    	URL = `${protocol}//${host}:${8080}/product?get=${dest}`;
+
+	    window.location.href = URL;
 	});
 }
