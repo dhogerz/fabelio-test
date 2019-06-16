@@ -1,4 +1,4 @@
-const URI = require('uri-js');
+const URL = require('url');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const Product = require('../models/product.model.js');
@@ -10,7 +10,9 @@ exports.tests = (req, res) => {
 
 // view
 exports.view = (req, res, next) => {
-    const search = URI.serialize(URI.parse(req.query['get']));
+    let search = req.query['get'];
+    	search = URL.parse(search).href;
+
     axios.get(search)
         .then((response) => {
             if (response.status === 200) {
@@ -40,7 +42,6 @@ exports.view = (req, res, next) => {
                 Product.findOneAndUpdate(query, update, options, (error, result) => {
                     if (error) return next(error);
 
-                    // do something with the product
                     res.render('index.ejs', {
                         page: "pages/product",
                         data: {
@@ -54,10 +55,13 @@ exports.view = (req, res, next) => {
                         }
                     });
                 });
-            }
+            } 
         })
         .catch((err) => {
-            throw new Error(err);
+            res.render("index.ejs", {
+                page: "pages/error",
+                errMsg: err
+            });
         });
 };
 
@@ -65,6 +69,9 @@ exports.view = (req, res, next) => {
 exports.list = (req, res) => {
     Product.find((err, product) => {
         if (err) return next(err);
-        res.send(product);
+        res.render("index.ejs", {
+            page: "pages/list",
+            data: product
+        });
     })
 };

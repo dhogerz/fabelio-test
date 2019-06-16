@@ -3,12 +3,13 @@ $(function() {
 	// $('form').submit(function(event) {
 	//     event.preventDefault();
 
-	//     // later on implement
+	//     // later on
 
 	//     return false;
 	// })	
 });
 
+// star
 function starr() {
 	// Starrr plugin (https://github.com/dobtco/starrr)
 	var __slice = [].slice;

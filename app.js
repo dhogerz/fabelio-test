@@ -24,7 +24,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // npm install
 
 // internal
-const routes = require('./routes/routes.js');
+const productsRoute = require('./routes/products-route.js');
 const PORT = 8080;
 
 // view engine
@@ -34,7 +34,7 @@ app.set('view engine', 'ejs');
 app.use(middlewares);
 
 // Routes
-app.use('/', routes);
+app.use('/', productsRoute);
 
 // 404
 app.use((req, res, next) => {
