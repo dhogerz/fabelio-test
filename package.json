@@ -4,6 +4,7 @@
   "description": "online test fabelio",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "serve": "nodemon app.js"
   },
   "repository": {
