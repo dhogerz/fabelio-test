@@ -1,0 +1,87 @@
+<div class="main-content">
+
+   <!-- Header -->
+   <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" 
+   		style="min-height: 600px; background-image: url(<%= data.image %>); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center">
+         <div class="row">
+            <div class="col-lg-12 col-md-10">
+               <h1 class="display-2 text-white"><%= data.name %> - Rp. <%= data.price %></h1>
+               <p class="text-white mt-0 mb-5"><%= data.description %></p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Page content -->
+   <div class="container-fluid mt--7">
+      <div class="row">
+
+         <div class="col-xl-12 order-xl-1">
+            <div class="card bg-secondary shadow">
+               <div class="card-header bg-white border-0">
+                  <div class="row align-items-center">
+                     <div class="col-8">
+                        <h3 class="mb-0">WRITE A REVIEW</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-body">
+                  <form action="https://api.yotpo.com/v1/widget/reviews" method="post">
+                     <!-- HIDDEN -->
+                     <input type="hidden" name="appkey" value="IlvXbqVGpe5ILrrhOucLZGrre7GOODTObgUgpwew">
+                     <input type="hidden" name="review_source" value="widget_v2">
+                     <input type="hidden" name="sku" value="<%= data.id %>">
+                     <input type="hidden" name="product_title" value="<%= data.name %>">
+                     <input type="hidden" name="product_description" value="<%= data.descr %>">
+                     <input type="hidden" name="product_url" value="<%= data.productUrl %>">
+                     <input type="hidden" name="product_image_url" value="<%= data.image %>">
+
+                     <div class="pl-lg-4">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="form-group focused">
+                                 <div id="stars" class="starrr"></div>
+                                 <input id="count" type="hidden" name="review_score" value="0">
+                              </div>
+                           </div>
+                           <div class="col-lg-12">
+                              <div class="form-group focused">
+                                 <label class="form-control-label" for="input-first-name">Title</label>
+                                 <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="" name="review_title" value="">
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="form-group focused">
+                                 <label class="form-control-label" for="input-username">Full Name</label>
+                                 <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Name" name="display_name" value="">
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="form-group">
+                                 <label class="form-control-label" for="input-email">Email address</label>
+                                 <input type="email" id="input-email" class="form-control form-control-alternative" name="email" placeholder="example@example.com">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="pl-lg-4">
+                        <div class="form-group focused">
+                           <label class="form-control-label" for="input-email">Review</label>
+                           <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about product ..." name="review_content"></textarea>
+                        </div>
+                     </div>
+                     <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
