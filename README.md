@@ -1,37 +1,44 @@
-# fabelio-test
-online test as Back End Developer for https://fabelio.com/ 
+# Project Title
+Monitoring APP
 
-## Getting Started
+## Feature
+This is - Simple version, without validation or sanitation -
+Monitoring fabelio product and add comment to each product
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+# List API
 
-this is - Simple version, without validation or sanitation -
+| API  | HTTP | Purpose |
+| ------------- | ------------ | ------------- |
+| /list  | GET | get all products list  |
 
-```
-Give examples
-```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+### Setup
 
 ```
-Give the example
+$ npm install
+$ npm run serve
+```
+Run on http://localhost:8000<br>
+
+### Environment
+
+```
+NodeJs 
+Mongodb
 ```
 
-And repeat
+### Dependencies 
 
 ```
-until finished
+Axios <br>
+Cheerio  <br>
+ejs <br>
+express <br>
+Mongoose <br>
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Deployment
-
-Additional notes about how to deploy this on a live system
+[**Link**](https://stormy-badlands-68110.herokuapp.com)
 
 ## Authors
 
