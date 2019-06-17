@@ -38,7 +38,8 @@ Mongoose <br>
 ```
 
 ## Deployment
-[**Link**](https://stormy-badlands-68110.herokuapp.com)
+Deployed with Heroku and AWS cloud storage<br>
+Link : (https://stormy-badlands-68110.herokuapp.com)
 
 ## Authors
 
