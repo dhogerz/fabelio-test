@@ -25,7 +25,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // internal
 const productsRoute = require('./routes/products-route.js');
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 // view engine
 app.set('view engine', 'ejs');
