@@ -139,7 +139,7 @@ function goTo() {
 	    let dest = $(this).data("url"), 
 	    	host = window.location.hostname,
 	    	protocol = window.location.protocol,
-	    	URL = `${protocol}//${host}:${8080}/product?get=${dest}`;
+	    	URL = `/product?get=${dest}`;
 
 	    window.location.href = URL;
 	});
